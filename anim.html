@@ -1,0 +1,42 @@
+<h1>SVG Animation</h1>
+<svg id="svg" viewBox="0 0 500 500">
+  
+  <defs>
+    <radialGradient id="PurpleGradient">
+      <stop offset="5%" stop-color="white"/>
+      <stop offset="60%" stop-color="purple"/>
+      <stop offset="99%" stop-color="black"/>
+    </radialGradient>
+  </defs>
+  
+  <circle id="circle" r="25" cx="25" cy="25" fill="url(#PurpleGradient)"/>
+  
+  <!-- X -->
+  <animate 
+    xlink:href="#circle"
+    attributeName="cx"
+    from="25"
+    to="475" 
+    values="25; 475; 25"
+    keyTimes="0; 0.5; 1"
+    dur="3.14s"
+    begin="0s"
+    repeatCount="indefinite" 
+    fill="freeze" />
+  
+  <!-- Y -->
+  <animate 
+    xlink:href="#circle"
+    attributeName="cy"
+    from="25"
+    to="475" 
+    calcMode="spline"
+    values="25; 475; 25"
+    keyTimes="0; 0.5; 1"
+    keySplines="0.42 0 1 1;
+                0 0 0.58 1;"
+    dur="2.06s"
+    begin="0s"
+    repeatCount="indefinite" 
+    fill="freeze" />  
+</svg>
